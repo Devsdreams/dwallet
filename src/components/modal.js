@@ -1,9 +1,9 @@
-import React, {useState} from "react"
+import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 
-const Dialog = ({ type = 'modal', title, showModal, hideModals, children, widthModal, icons, ...props }) => {
+const Dialog = ({  showModal, hideModals, children, widthModal }) => {
    return(
     showModal ? (
         <div className={`fixed top-0 left-0 z-[9999] w-full h-full flex flex-1 justify-center items-center ${showModal ? 'scale-100 opacity-100 transition delay-700 duration-1000 ease-in-out': 'scale-125 opacity-0 transition delay-700 duration-1000 ease-in-out'} `} onClick={(event) => event.stopPropagation()}>

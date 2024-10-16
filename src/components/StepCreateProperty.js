@@ -1,7 +1,7 @@
 // imports components and icons
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faChevronRight, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 
 // const exports function step
 const step = ({ active = 'step1', success_one = false, success_two = false, success_three = false, success_four = false, ...props }) => (

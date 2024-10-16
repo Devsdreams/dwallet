@@ -1,17 +1,10 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import Dropdown from '@/components/Dropdown'
 import Link from 'next/link'
-import NavLink from '@/components/NavLink'
-import ResponsiveNavLink, {
-    ResponsiveNavButton,
-} from '@/components/ResponsiveNavLink'
-import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookBookmark, faBookSkull, faCarSide, faCircleInfo, faDashboard, faGear, faHome, faHomeAlt, faHouseDamage, faMoneyBill, faPlus, faSdCard, faSheetPlastic, faUserAlt, faUserPlus, faChevronRight, faChevronUp, faLanguage, faGears, faEnvelope, faPaperPlane, faPaperclip, faToiletPaper, faNewspaper, faUsers } from '@fortawesome/free-solid-svg-icons'
-import { faServicestack } from '@fortawesome/free-brands-svg-icons'
+import {  faGear, faHome, faChevronRight, faChevronUp, faLanguage, faGears, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const Navigation = ({ user }) => {

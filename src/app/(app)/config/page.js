@@ -1,11 +1,7 @@
 'use client'
-import Header from '@/app/(app)/Header'
-import axios from 'axios'
 import { useAuth } from '@/hooks/auth'
 import Button from '@/components/Button'
-import TextArea from '@/components/Textarea'
 import Input from '@/components/Input'
-import InputError from '@/components/InputError'
 import Label from '@/components/Label'
 import { useState, useRef, useCallback } from 'react'
 import Image from 'next/image'
@@ -15,46 +11,44 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 import 'react-quill/dist/quill.snow.css'
 
 const Dashboard = () => {
-    const { user } = useAuth({ middleware: 'auth' })
     const [titulo, setTitulo] = useState('');
-    const [descripcion, setDescripcion] = useState('');
-    const [facebook, setFacebook] = useState('');
-    const [whatsapp, setWhatsapp] = useState('');
-    const [instagram, setInstagram] = useState('');
-    const [pinterest, setPinterest] = useState('');
-    const [twitter, setTwitter] = useState('');
-    const [logo, setLogo] = useState(null);
-    const [banner, setBanner] = useState(null);
-    const logoInputRef = useRef(null);
-    const bannerInputRef = useRef(null);
-    const [urlWeb, setUrlWeb] = useState('');
-    const [errors, setErrors] = useState([])
+    const [descripcion, setDescripcion] = useState('')
+    const [facebook, setFacebook] = useState('')
+    const [whatsapp, setWhatsapp] = useState('')
+    const [instagram, setInstagram] = useState('')
+    const [pinterest, setPinterest] = useState('')
+    const [twitter, setTwitter] = useState('')
+    const [logo, setLogo] = useState(null)
+    const [banner, setBanner] = useState(null)
+    const logoInputRef = useRef(null)
+    const bannerInputRef = useRef(null)
+    const [urlWeb, setUrlWeb] = useState('')
 
     const handleImageUpload = useCallback((file, setImage) => {
         if (file && file.type.startsWith('image/')) {
-            const reader = new FileReader();
+            const reader = new FileReader()
             reader.onload = (e) => {
-                setImage(e.target.result);
+                setImage(e.target.result)
             };
-            reader.readAsDataURL(file);
+            reader.readAsDataURL(file)
         }
     }, []);
 
     const handleDrop = useCallback((e, setImage) => {
-        e.preventDefault();
-        e.stopPropagation();
+        e.preventDefault()
+        e.stopPropagation()
         if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-            handleImageUpload(e.dataTransfer.files[0], setImage);
+            handleImageUpload(e.dataTransfer.files[0], setImage)
         }
-    }, [handleImageUpload]);
+    }, [handleImageUpload])
 
     const handleDragOver = useCallback((e) => {
-        e.preventDefault();
-        e.stopPropagation();
+        e.preventDefault()
+        e.stopPropagation()
     }, []);
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         // Aquí iría la lógica para enviar los datos
     }
 

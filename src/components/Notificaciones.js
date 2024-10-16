@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useRef } from 'react'
+import axios from 'axios'
 
 const Notificacion = ({ avatar, contenido, tiempo, icono, leida, onMarcarLeida }) => (
   <div className={`flex items-center p-2 hover:bg-gray-100 ${leida ? 'opacity-50' : ''}`}>
@@ -22,53 +22,53 @@ const Notificacion = ({ avatar, contenido, tiempo, icono, leida, onMarcarLeida }
 
 const Notificaciones = () => {
   const [notificaciones, setNotificaciones] = useState([]);
-  const [filtro, setFiltro] = useState('todas');
-  const [mostrarNotificaciones, setMostrarNotificaciones] = useState(false);
-  const notificacionesRef = useRef(null);
+  const [filtro, setFiltro] = useState('todas')
+  const [mostrarNotificaciones, setMostrarNotificaciones] = useState(false)
+  const notificacionesRef = useRef(null)
 
   useEffect(() => {
-    cargarNotificaciones();
-    document.addEventListener('mousedown', handleClickOutside);
+    cargarNotificaciones()
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   const handleClickOutside = (event) => {
     if (notificacionesRef.current && !notificacionesRef.current.contains(event.target)) {
-      setMostrarNotificaciones(false);
+      setMostrarNotificaciones(false)
     }
-  };
+  }
 
   const cargarNotificaciones = async () => {
     try {
       // Reemplaza esta URL con tu endpoint real
-      const response = await axios.get('https://api.ejemplo.com/notificaciones');
-      setNotificaciones(response.data);
+      const response = await axios.get('https://api.ejemplo.com/notificaciones')
+      setNotificaciones(response.data)
     } catch (error) {
-      console.error('Error al cargar notificaciones:', error);
+      console.error('Error al cargar notificaciones:', error)
     }
-  };
+  }
 
   const marcarComoLeida = async (id) => {
     try {
       // Reemplaza esta URL con tu endpoint real
-      await axios.post(`https://api.ejemplo.com/notificaciones/${id}/leer`);
+      await axios.post(`https://api.ejemplo.com/notificaciones/${id}/leer`)
       setNotificaciones(notificaciones.map(notif => 
         notif.id === id ? {...notif, leida: true} : notif
-      ));
+      ))
     } catch (error) {
-      console.error('Error al marcar como leída:', error);
+      console.error('Error al marcar como leída:', error)
     }
-  };
+  }
 
   const notificacionesFiltradas = notificaciones.filter(notif => 
     filtro === 'todas' || (filtro === 'no_leidas' && !notif.leida)
-  );
+  )
 
   const toggleNotificaciones = () => {
-    setMostrarNotificaciones(!mostrarNotificaciones);
-  };
+    setMostrarNotificaciones(!mostrarNotificaciones)
+  }
 
   return (
     <div className="relative" ref={notificacionesRef}>

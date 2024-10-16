@@ -5,8 +5,6 @@ import Navigation from '@/app/(app)/Navigation'
 import NavTopbar from '@/app/(app)/NavTopbar'
 import Loading from '@/app/(app)/Loading'
 
-
-import { useState } from 'react'
 const AppLayout = ({ children }) => {
     const { user } = useAuth({ middleware: 'auth' })
     

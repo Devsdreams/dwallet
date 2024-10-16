@@ -1,11 +1,6 @@
 'use client'
-import Header from '@/app/(app)/Header'
-import axios from 'axios'
-import { useAuth } from '@/hooks/auth'
 import Button from '@/components/Button'
-import TextArea from '@/components/Textarea'
 import Input from '@/components/Input'
-import InputError from '@/components/InputError'
 import Label from '@/components/Label'
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
@@ -14,8 +9,7 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 import 'react-quill/dist/quill.snow.css'
 
 const Dashboard = () => {
-    const { user } = useAuth({ middleware: 'auth' })
-    const [errors, setErrors] = useState([])
+  
     const [smtpHost, setSmtpHost] = useState('');
     const [smtpPort, setSmtpPort] = useState('');
     const [smtpUsuario, setSmtpUsuario] = useState('');

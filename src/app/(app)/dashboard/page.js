@@ -1,18 +1,15 @@
 'use client'
 import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheckCircle, faEdit, faTimesCircle, faGear, faUserShield, faTrashAlt, faAngleUp, faUpLong, faArrowDown, faPlus, faArrowUp, faChevronRight, faChain } from "@fortawesome/free-solid-svg-icons"
+import { faCheckCircle,  faTimesCircle, faGear, faTrashAlt,  faArrowDown, faPlus, faArrowUp, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import Dropdown from "@/components/Dropdown"
-import DropdownLink, { DropdownButton } from "@/components/DropdownLink"
+import  { DropdownButton } from "@/components/DropdownLink"
 import DialogDelete from '@/components/Dialog'
-import DialogRolPermission from '@/components/Dialog'
-import Input from "@/components/Input"
 import { useAuth } from "@/hooks/auth"
 import { faBitcoin, faEthereum } from "@fortawesome/free-brands-svg-icons"
 import Link from "next/link"
 const page = () =>{
     const [modalDelete, setModalDelete] = useState(false)
-    const [modalRolPermission, setModalRolPermission] = useState(false)
     const deleteUser = () => {
         setModal(false)
     }

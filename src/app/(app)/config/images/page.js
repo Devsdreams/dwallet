@@ -1,7 +1,5 @@
 'use client'
-import Header from '@/app/(app)/Header'
 import axios from 'axios'
-import { useAuth } from '@/hooks/auth'
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import InputError from '@/components/InputError'
@@ -9,8 +7,7 @@ import Label from '@/components/Label'
 import { useState, useEffect } from 'react'
 
 const Dashboard = () => {
-    const { user } = useAuth({ middleware: 'auth' })
-    const [maxImages, setMaxImages] = useState(5)
+    // const [maxImages, setMaxImages] = useState(5)
     const [basicImages, setBasicImages] = useState(3)
     const [platinumImages, setPlatinumImages] = useState(7)
     const [goldImages, setGoldImages] = useState(10)
@@ -36,7 +33,7 @@ const Dashboard = () => {
         setMessage('')
 
         try {
-            const response = await axios.post('/api/image-config', { 
+            await axios.post('/api/image-config', { 
                 max_images: maxImages,
                 basic_images: basicImages,
                 platinum_images: platinumImages,

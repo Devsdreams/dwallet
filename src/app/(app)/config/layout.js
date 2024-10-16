@@ -4,7 +4,6 @@ import { useAuth } from '@/hooks/auth'
 import NavPage from '@/app/(app)/config/Navigation'
 import Loading from '@/app/(app)/Loading'
 
-import { useState } from 'react'
 const PageLayout = ({ children }) => {
     const { user } = useAuth({ middleware: 'auth' })
     

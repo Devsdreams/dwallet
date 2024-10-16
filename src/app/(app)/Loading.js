@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 const Loading = () => {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 3000); // La animación durará 3 segundos
+            setIsLoading(false)
+        }, 3000) // La animación durará 3 segundos
 
-        return () => clearTimeout(timer);
-    }, []);
+        return () => clearTimeout(timer)
+    }, [])
 
-    if (!isLoading) return null;
+    if (!isLoading) return null
 
     return (
         <div className="flex min-h-screen w-full items-center justify-center bg-blue-900/[0.03] overflow-hidden">
@@ -29,4 +29,4 @@ const Loading = () => {
     );
 }
 
-export default Loading;
+export default Loading

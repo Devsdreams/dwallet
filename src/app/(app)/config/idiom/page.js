@@ -1,53 +1,36 @@
 'use client'
-import Header from '@/app/(app)/Header'
 import axios from 'axios'
-import { useAuth } from '@/hooks/auth'
 import Button from '@/components/Button'
-import TextArea from '@/components/Textarea'
-import Input from '@/components/Input'
-import InputError from '@/components/InputError'
-import Label from '@/components/Label'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencilAlt, faTrash, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Dashboard = () => {
-    const { user } = useAuth({ middleware: 'auth' })
     const [idiomas, setIdiomas] = useState([
         { id: 1, nombre: 'Español', estado: 'Activo', predeterminado: true },
         { id: 2, nombre: 'Inglés', estado: 'Activo', predeterminado: false },
         { id: 3, nombre: 'Francés', estado: 'Inactivo', predeterminado: false }
-    ]);
+    ])
 
     const setIdiomaPredeterminado = async (index) => {
         try {
-            const idiomaSeleccionado = idiomas[index];
+            const idiomaSeleccionado = idiomas[index]
             
             // Llamada a la API para actualizar el idioma predeterminado
-            await axios.put('/api/idiomas/predeterminado', { id: idiomaSeleccionado.id });
+            await axios.put('/api/idiomas/predeterminado', { id: idiomaSeleccionado.id })
             
             // Si la llamada a la API es exitosa, actualizamos el estado local
             setIdiomas(idiomas.map((idioma, i) => ({
                 ...idioma,
                 predeterminado: i === index
-            })));
+            })))
         } catch (error) {
-            console.error('Error al actualizar el idioma predeterminado:', error);
-           alert('Error al actualizar el idioma predeterminado:');
+            console.error('Error al actualizar el idioma predeterminado:', error)
+           alert('Error al actualizar el idioma predeterminado:')
             // Aquí podrías mostrar un mensaje de error al usuario
         }
-    };
-
-    const [title, setTitle] = useState('');
-    const [descrption, setDescription] = useState('');
-    const [typePrpperty, setTypeProperty] = useState('');
-    const [price, setPrice] = useState('');
-    const [errors, setErrors] = useState([])
-    const check = (element) => {
-        var checkbox = document.getElementById(element);
-        checkbox.classList.remove('hidden')
-        checkbox?.click();
     }
+
     return (
         <>
         {/* header */}

@@ -7,8 +7,6 @@ const Page = () => {
     
     
     const [viewWallet, setViewWallet] = useState(false)
-    const [errors, setErrors] = useState([])
-    const [status, setStatus] = useState(null)
 
    const _viewWallet = () => {
     (viewWallet) ? 

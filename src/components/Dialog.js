@@ -2,7 +2,7 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
-const Dialog = ({ type = 'modal', title, showModal, hideModals, children, widthModal, icons, ...props }) => {
+const Dialog = ({  showModal, hideModals, children, widthModal }) => {
    return (
      <div 
        className={`fixed top-0 left-0 z-[9999] w-full h-full flex flex-1 justify-center items-center bg-black bg-opacity-50 transition-all duration-300 ease-in-out

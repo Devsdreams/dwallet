@@ -1,7 +1,7 @@
 // import library next js and file save in the dir public/idProperty/uploadFile
 import { writeFile } from "fs/promises"
 import { NextResponse } from 'next/server'
-import path from "path";
+import path from "path"
 
 // export function async await
 export async function post(request) {

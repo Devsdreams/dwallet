@@ -1,7 +1,5 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
 import Dropdown from '@/components/Dropdown'
 import Link from 'next/link'
-import NavLink from '@/components/NavLink'
 import ResponsiveNavLink, {
     ResponsiveNavButton,
 } from '@/components/ResponsiveNavLink'
@@ -9,21 +7,20 @@ import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import ToggleMenu from '@/components/ToggleMenu'
 import Notificaciones from '@/components/Notificaciones';
-import { faCircle, faVolumeHigh, faDashboard, faUserAltSlash, faUserAlt, faUserCircle, faHouseCircleXmark, faUserCog, faUserLock, faUserSlash, faUserSecret, faUserShield, faMagnifyingGlass, faLevelUp } from "@fortawesome/free-solid-svg-icons";
+import { faUserShield, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 FontAwesomeIcon
 const Navigation = ({ user }) => {
     const { logout } = useAuth()
-    const  addProperty  = () => { window.location.href = '/property/add/step-1'}
+    // const  addProperty  = () => { window.location.href = '/property/add/step-1'}
     const [open, setOpen] = useState(false)
-    const menuItems = [
-        { toggle: false, icons: faDashboard, label: 'Tema', href: '/dashboard' },
-        { toggle: false, icons: faVolumeHigh, label: 'Silenciar', href: '/property' },
-        { toggle: true, icons: faUserAltSlash, label: 'Inactivo', href: '/users' },
+    // const menuItems = [
+    //     { toggle: false, icons: faDashboard, label: 'Tema', href: '/dashboard' },
+    //     { toggle: false, icons: faVolumeHigh, label: 'Silenciar', href: '/property' },
+    //     { toggle: true, icons: faUserAltSlash, label: 'Inactivo', href: '/users' },
         
-    ];
+    // ]
     return (
         <nav className="bg-white border-b border-gray-100 fixed w-full z-50">
             {/* Primary Navigation Menu */}
@@ -107,7 +104,7 @@ const Navigation = ({ user }) => {
                                 stroke="currentColor"
                                 fill="none"
                                 viewBox="0 0 24 24">
-                                {open ? (
+                                {(open) ? (
                                     <path
                                         className="inline-flex"
                                         strokeLinecap="round"
