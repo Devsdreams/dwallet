@@ -113,7 +113,7 @@ const Notificaciones = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Notificaciones;
+export default Notificaciones
