@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+td{
+    padding: 8px;
+}
+th{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@keyframes slide-left-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-slide-left-right {
+    animation: slide-left-right 3s linear infinite;
+}
+
+@keyframes reveal-right-to-left {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.animate-reveal-right-to-left {
+    animation: reveal-right-to-left 2s ease-out forwards;
+}
+
+.fc-day-today{
+    background-color: #0149bc2a!important;
+}
+
+.fc-button-primary{
+    background-color: #0960eb!important;
+    border-color: #0960eb!important;
+}
+.fc-h-event{
+    background-color: #ff9300!important;
+    border-color: #ff9300!important;
+}
