@@ -1,16 +1,11 @@
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faGear, faHome, faChevronRight, faChevronUp, faLanguage, faGears, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-
-
 const Navigation = ({ user }) => {
-    const { logout } = useAuth()
-    const nameUrl = usePathname().split('/');
-    const [open, setOpen] = useState(false)
+    const nameUrl = usePathname().split('/')
     const [activeMenu, setActiveMenu] = useState(null)
 
     const toggleMenu = (menuName) => {

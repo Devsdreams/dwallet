@@ -1,5 +1,4 @@
 'use client'
-import { useAuth } from '@/hooks/auth'
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import Label from '@/components/Label'
@@ -11,7 +10,7 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 import 'react-quill/dist/quill.snow.css'
 
 const Dashboard = () => {
-    const [titulo, setTitulo] = useState('');
+    const [titulo, setTitulo] = useState('')
     const [descripcion, setDescripcion] = useState('')
     const [facebook, setFacebook] = useState('')
     const [whatsapp, setWhatsapp] = useState('')
@@ -23,16 +22,16 @@ const Dashboard = () => {
     const logoInputRef = useRef(null)
     const bannerInputRef = useRef(null)
     const [urlWeb, setUrlWeb] = useState('')
-
+    
     const handleImageUpload = useCallback((file, setImage) => {
         if (file && file.type.startsWith('image/')) {
             const reader = new FileReader()
             reader.onload = (e) => {
                 setImage(e.target.result)
-            };
+            }
             reader.readAsDataURL(file)
         }
-    }, []);
+    }, [])
 
     const handleDrop = useCallback((e, setImage) => {
         e.preventDefault()
@@ -45,7 +44,7 @@ const Dashboard = () => {
     const handleDragOver = useCallback((e) => {
         e.preventDefault()
         e.stopPropagation()
-    }, []);
+    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault()

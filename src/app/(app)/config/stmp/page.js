@@ -3,23 +3,20 @@ import Button from '@/components/Button'
 import Input from '@/components/Input'
 import Label from '@/components/Label'
 import { useState } from 'react'
-import dynamic from 'next/dynamic'
 
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
-import 'react-quill/dist/quill.snow.css'
 
 const Dashboard = () => {
   
-    const [smtpHost, setSmtpHost] = useState('');
-    const [smtpPort, setSmtpPort] = useState('');
-    const [smtpUsuario, setSmtpUsuario] = useState('');
-    const [smtpContraseña, setSmtpContraseña] = useState('');
-    const [smtpEncriptacion, setSmtpEncriptacion] = useState('');
-    const [emailRemitente, setEmailRemitente] = useState('');
-    const [nombreRemitente, setNombreRemitente] = useState('');
+    const [smtpHost, setSmtpHost] = useState('')
+    const [smtpPort, setSmtpPort] = useState('')
+    const [smtpUsuario, setSmtpUsuario] = useState('')
+    const [smtpContraseña, setSmtpContraseña] = useState('')
+    const [smtpEncriptacion, setSmtpEncriptacion] = useState('')
+    const [emailRemitente, setEmailRemitente] = useState('')
+    const [nombreRemitente, setNombreRemitente] = useState('')
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         // Aquí iría la lógica para enviar los datos
     }
 

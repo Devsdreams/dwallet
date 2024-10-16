@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 
 // const exports function step
-const step = ({ active = 'step1', success_one = false, success_two = false, success_three = false, success_four = false, ...props }) => (
+const step = ({ active = 'step1', success_one = false, success_two = false, success_three = false, success_four = false }) => (
     // start container  
     <>
     <h2 className='font-bold text-lg'>Publica tu inmueble</h2>

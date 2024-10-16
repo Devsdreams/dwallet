@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faToggleOn, faToggleOff, faDashboard, faVolumeHigh, faUserAltSlash } from "@fortawesome/free-solid-svg-icons";
+import { faToggleOn, faToggleOff } from "@fortawesome/free-solid-svg-icons";
 
 const ToggleMenu = ({ title = 'Menú', items = [] }) => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(false)
 
 	const toggleMenu = () => {
-		setIsOpen(!isOpen);
+		setIsOpen(!isOpen)
 	};
 
 	return (

@@ -1,10 +1,10 @@
-import { faCameraAlt, faCheckDouble, faDashboard, faEnvelopeOpen, faLanguage, faMoneyBill, faMoneyBillAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCameraAlt, faCheckDouble, faDashboard, faEnvelopeOpen, faLanguage, faMoneyBillAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const Navigation = ({ user }) => {
-    const nameUrl = usePathname().split('/');
+    const nameUrl = usePathname().split('/')
 return (
     <>
         <nav className="bg-white pt-12 h-screen">

@@ -7,8 +7,8 @@ import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import Notificaciones from '@/components/Notificaciones';
-import { faUserShield, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Notificaciones from '@/components/Notificaciones'
+import { faUserShield, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 FontAwesomeIcon
 const Navigation = ({ user }) => {

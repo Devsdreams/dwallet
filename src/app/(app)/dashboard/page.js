@@ -11,12 +11,9 @@ import Link from "next/link"
 const page = () =>{
     const [modalDelete, setModalDelete] = useState(false)
     const deleteUser = () => {
-        setModal(false)
+        setModalDelete(false)
     }
     const { user } = useAuth({ middleware: 'auth' })
-    const RolPermissionUser = () => {
-        setModalRolPermission(false)
-    }
     return(
         
         user[0].roles_id !== 3 ? ( <>

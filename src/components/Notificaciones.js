@@ -18,10 +18,10 @@ const Notificacion = ({ avatar, contenido, tiempo, icono, leida, onMarcarLeida }
       </button>
     )}
   </div>
-);
+)
 
 const Notificaciones = () => {
-  const [notificaciones, setNotificaciones] = useState([]);
+  const [notificaciones, setNotificaciones] = useState([])
   const [filtro, setFiltro] = useState('todas')
   const [mostrarNotificaciones, setMostrarNotificaciones] = useState(false)
   const notificacionesRef = useRef(null)

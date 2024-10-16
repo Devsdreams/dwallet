@@ -26,7 +26,7 @@ const Loading = () => {
                 <h3 className="text-md font-bold mb-4">Estamos preparando todo para ti...</h3>
             </div>
         </div>
-    );
+    )
 }
 
 export default Loading

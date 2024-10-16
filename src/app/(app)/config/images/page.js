@@ -7,7 +7,7 @@ import Label from '@/components/Label'
 import { useState, useEffect } from 'react'
 
 const Dashboard = () => {
-    // const [maxImages, setMaxImages] = useState(5)
+    const [maxImages, setMaxImages] = useState(5)
     const [basicImages, setBasicImages] = useState(3)
     const [platinumImages, setPlatinumImages] = useState(7)
     const [goldImages, setGoldImages] = useState(10)
