@@ -23,7 +23,7 @@ const page = () =>{
         <div className="overflow-hidden shadow-sm sm:rounded-lg">
             <div className="px-8 py-8 pb-8 bg-white h-screen min-h-[500px]">
                 <h3 className="font-bold mb-12">Listado de Usuarios</h3>
-                <table class="table-fixed w-full border-separate text-left q border-collapse h-auto">
+                <table className="table-fixed w-full border-separate text-left q border-collapse h-auto">
                     <thead className="border-b-2 border-gray-200">
                         <tr className="border-b-2 border-gray-200">
                         <th className="border-b-2 border-gray-200">Usuario</th>
