@@ -48,28 +48,28 @@ const page = () => {
                     <div className="space-y-4 pt-4">
                         <div className="flex flex-1 w-full space-x-4">
                             <div className="w-1/2">
-                                <label for="name">Nombres:</label>
+                                
                                 <Input type="text" id="name" className={'text-sm w-full'} placeholder="Nombre" value={name} onChange={event => setName(event.target.value)} />
                             </div>
                             <div className="w-1/2">
-                                <label for="name">Apellidos:</label>
-                                <Input type="text" id="name" className={'text-sm w-full'} placeholder="Nombre" value={lastname} onChange={event => setLastname(event.target.value)} />
+                                
+                                <Input type="text" id="name" className={'text-sm w-full'} placeholder="Apellido" value={lastname} onChange={event => setLastname(event.target.value)} />
                             </div>
                         </div>
                         
                         <div>
-                            <label for="name">Correo:</label>
-                            <Input type="email" id="name" className={'text-sm w-full'} placeholder="Nombre" value={email} onChange={event => setEmail(event.target.value)} />
+                            
+                            <Input type="email" id="name" className={'text-sm w-full'} placeholder="Correo Electrónico" value={email} onChange={event => setEmail(event.target.value)} />
                         </div>
                         
                         <div className="flex flex-1 w-full space-x-4">
                             <div className="w-1/2">
-                                <label for="name">Telefono:</label>
-                                <Input type="tel" id="name" className={'text-sm w-full'} placeholder="Nombre" value={cell} onChange={event => setCell(event.target.value)} />
+                            
+                                <Input type="tel" id="name" className={'text-sm w-full'} placeholder="Celular / Telefono" value={cell} onChange={event => setCell(event.target.value)} />
                             </div>
                             <div className="w-1/2">
-                                <label for="name">Dirección:</label>
-                                <Input type="text" id="name" className={'text-sm w-full'} placeholder="Nombre" value={address} onChange={event => setAddress(event.target.value)} />
+                                
+                                <Input type="text" id="name" className={'text-sm w-full'} placeholder="Dirección" value={address} onChange={event => setAddress(event.target.value)} />
                             </div>
                         </div>
                         <div className="flex flex-1 justify-end ">
