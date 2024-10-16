@@ -7,9 +7,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const router = useRouter()
     const params = useParams()
 
-    const { data: user, error, mutate } = useSWR('http://appserve.d-wallet.online//api/user', () =>
+    const { data: user, error, mutate } = useSWR('https://appserve.d-wallet.online//api/user', () =>
         axios
-            .get('http://appserve.d-wallet.online/api/user')
+            .get('https://appserve.d-wallet.online/api/user')
             .then(res => res.data)
             .catch(error => {
                 if (error.response.status !== 409) throw error
@@ -18,7 +18,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             }),
     )
 
-    const csrf = () => axios.get('http://appserve.d-wallet.online/sanctum/csrf-cookie')
+    const csrf = () => axios.get('https://appserve.d-wallet.online/sanctum/csrf-cookie')
 
     const register = async ({ setErrors, ...props }) => {
         await csrf()
@@ -26,7 +26,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setErrors([])
 
         axios
-            .post('http://appserve.d-wallet.online/register', props)
+            .post('https://appserve.d-wallet.online/register', props)
             .then(() => mutate())
             .catch(error => {
                 if (error.response.status !== 422) throw error
@@ -42,7 +42,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setStatus(null)
 
         axios
-            .post('http://appserve.d-wallet.online/login', props)
+            .post('https://appserve.d-wallet.online/login', props)
             .then(() => mutate())
             .catch(error => {
                 if (error.response.status !== 422) throw error
@@ -58,7 +58,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setStatus(null)
 
         axios
-            .post('http://appserve.d-wallet.online/forgot-password', { email })
+            .post('https://appserve.d-wallet.online/forgot-password', { email })
             .then(response => setStatus(response.data.status))
             .catch(error => {
                 if (error.response.status !== 422) throw error
@@ -74,7 +74,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setStatus(null)
 
         axios
-            .post('http://appserve.d-wallet.online/reset-password', { token: params.token, ...props })
+            .post('https://appserve.d-wallet.online/reset-password', { token: params.token, ...props })
             .then(response =>
                 router.push('/login?reset=' + btoa(response.data.status)),
             )
@@ -87,13 +87,13 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
     const resendEmailVerification = ({ setStatus }) => {
         axios
-            .post('http://appserve.d-wallet.online/email/verification-notification')
+            .post('https://appserve.d-wallet.online/email/verification-notification')
             .then(response => setStatus(response.data.status))
     }
 
     const logout = async () => {
         if (!error) {
-            await axios.post('http://appserve.d-wallet.online/logout').then(() => mutate())
+            await axios.post('https://appserve.d-wallet.online/logout').then(() => mutate())
         }
 
         window.location.pathname = '/login'
