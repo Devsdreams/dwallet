@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faToggleOn, faToggleOff } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faToggleOn, faToggleOff } from "@fortawesome/free-solid-svg-icons"
 
 const ToggleMenu = ({ title = 'Menú', items = [] }) => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen)
-	};
+	}
 
 	return (
 		<>
@@ -43,7 +43,7 @@ const ToggleMenu = ({ title = 'Menú', items = [] }) => {
 				></div>
 			)}
 		</>
-	);
-};
+	)
+}
 
-export default ToggleMenu;
+export default ToggleMenu
