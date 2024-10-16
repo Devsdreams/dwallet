@@ -10,7 +10,7 @@ import { useState } from 'react'
 import Notificaciones from '@/components/Notificaciones'
 import { faUserShield, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-FontAwesomeIcon
+
 const Navigation = ({ user }) => {
     const { logout } = useAuth()
     // const  addProperty  = () => { window.location.href = '/property/add/step-1'}
